@@ -4,12 +4,12 @@
 
 Method resolution is how Java determines which method to call when you invoke a method on an object. This process differs depending on whether we're dealing with static or dynamic binding.
 
-**Static Binding (Compile-time)**
+**Static Binding (Compile-time)** 🔍
 - Occurs during compilation
 - Used for private, static, and final methods
 - Based on the reference type, not the actual object
 
-**Dynamic Binding (Runtime)**
+**Dynamic Binding (Runtime)** ⚡
 - Occurs during execution
 - Used for virtual methods (non-static, non-final, non-private)
 - Based on the actual object type, not the reference type
@@ -52,7 +52,7 @@ public class Test {
 
 ✅ **Interview Insight**: Be able to explain why `p2.display()` calls the Child's method but `p2.staticMethod()` calls the Parent's method.
 
---------- 
+----------
 
 
 ## 2. 🔄 Dynamic Method Dispatch
@@ -95,7 +95,9 @@ public class Example {
 
 ✅ **Key Point**: Dynamic dispatch is essential for polymorphism in Java, allowing you to write flexible, extensible code.
 
---------- 
+💡 **Remember**: The variable type determines which methods you can call, but the object type determines which implementation gets executed.
+
+----------
 
 
 ## 3. 🔍 The Method Resolution Process
@@ -140,7 +142,9 @@ public class ResolutionExample {
 
 ❌ **Common Mistake**: Assuming method calls are resolved based only on the reference type. Remember that overridden methods use the actual object's implementation!
 
---------- 
+⚠️ **Interview Trap**: Interviewers often test whether you understand that the reference type determines which methods are accessible, while the object type determines which implementation gets called.
+
+----------
 
 
 ## 4. 🧩 Method Hiding vs. Method Overriding
@@ -185,12 +189,14 @@ public class HidingVsOverriding {
 
 📌 **Interview Insight**: Static methods can't be overridden because they belong to classes, not objects. They can only be hidden. This is a common interview question!
 
---------- 
+🚫 **Watch Out**: Static methods don't participate in polymorphism - they're bound at compile time based on the reference type.
+
+----------
 
 
 ## 5. ⚠️ Common Pitfalls and Edge Cases
 
-### Overloaded vs. Overridden Methods
+### Overloaded vs. Overridden Methods 🔄
 
 ```java
 class Base {
@@ -227,7 +233,7 @@ public class OverloadingExample {
 
 ❌ **Common Mistake**: Confusing overloading (different method signatures) with overriding (same signature). Overloaded methods don't participate in dynamic dispatch!
 
-### Private, Final, and Static Methods
+### Private, Final, and Static Methods 🔒
 
 ```java
 class SuperClass {
@@ -273,7 +279,12 @@ class SubClass extends SuperClass {
 
 📌 **Interview Insight**: Private methods are not inherited, final methods cannot be overridden, and static methods are hidden, not overridden. These distinctions are crucial for interviews!
 
---------- 
+💡 **Memory Aid**: 
+- Private → Not inherited at all
+- Final → Inherited but can't be changed
+- Static → Belongs to class, not object
+
+----------
 
 
 ## 6. 🚀 Best Practices
@@ -308,7 +319,9 @@ class DogShelter extends AnimalShelter {
 
 6. ✅ **Create clean hierarchies** where overridden methods have the same semantics to follow the Liskov Substitution Principle
 
---------- 
+🔍 **Pro Tip**: When designing inheritance hierarchies, make sure overridden methods maintain the contract specified by the parent class. This follows the "L" in SOLID principles.
+
+----------
 
 
 ## 7. 📝 Summary
@@ -326,7 +339,9 @@ Dynamic Method Dispatch is a key feature of Java's OOP implementation that enabl
 
 This mechanism allows you to write code that works with objects of different types through a common interface, making your code more flexible and maintainable.
 
---------- 
+💡 **Real-world Example**: Dynamic method dispatch is what powers frameworks like Spring, Hibernate, and Java Collections, where code written against interfaces works with various implementations without knowing the concrete types.
+
+----------
 
 
 ## 8. 📊 Quick Reference Table
@@ -343,3 +358,9 @@ This mechanism allows you to write code that works with objects of different typ
 | **Can add for final methods** | No | N/A | Yes |
 
 ✅ **Quick Check**: For interviews, make sure you understand how the JVM resolves method calls for overridden methods vs. hidden static methods vs. overloaded methods!
+
+🎯 **Interview Focus Areas**:
+- Explain polymorphism using dynamic method dispatch
+- Differentiate between overriding and overloading
+- Explain why static methods can't be overridden
+- Describe how final and private methods affect inheritance
