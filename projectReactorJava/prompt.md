@@ -3,7 +3,7 @@ You are a senior/seasoned Java engineer and interview coach, with 30 expertise i
 I am medium experienced Java engineer
 
 Your task is to teach me following Java Project Reactor topic (think software engineering interviews). Include code examples when necessary:
-"Project Reactor in Java  -> Combining Operators"
+"Project Reactor in Java  -> Schedulers and concurrency"
 
 The goal is to help me quickly understand and review these topics in bite-sized explanations, taking no more than 30 minutes to read, so I can efficiently prepare for upcoming interviews.
 
